@@ -1,0 +1,24 @@
+{% extends 'layouts/index.html' %}
+{% block content %}
+  <div class="card" style="width: 50rem; justify-content: center;">
+      <img src="{{ mobile.image.url }}" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">{{mobile.title}}</h5>
+          <p class="card-text">{{mobile.description}}</p>
+          <div>
+              {% for hashtag in mobile.hashtag.all %}
+                  <p>#{{ hashtag.title }}</p>
+              {% endfor %}
+          </div>
+      </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{mobile.type_mobil}}</li>
+    <li class="list-group-item">{{mobile.cost}}</li>
+    <li class="list-group-item">{{mobile.director}}</li>
+    <li class="list-group-item">{{mobile.number_of_page}}</li>
+    <li class="list-group-item">{{mobile.date_start}}</li>
+    <li class="list-group-item">{{mobile.created_et}}</li>
+  </ul>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+.card_block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.card{
+    display : flex;
+    align-items: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 50px;
+}
+
+.card-
