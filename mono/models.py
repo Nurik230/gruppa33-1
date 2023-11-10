@@ -11,6 +11,9 @@ class Hashtag(models.Model):
         verbose_name = "Хештег"
         verbose_name_plural = "Хештеги"
 
+
+
+
 class Mobile(models.Model):
     """ References """
     hashtag = models.ManyToManyField(Hashtag)
@@ -36,3 +39,16 @@ class Mobile(models.Model):
         verbose_name_plural = 'Телефон'
 
 
+
+
+class Review(models.Model):
+    text = models.TextField(verbose_name='Отзывы к продуктам')
+    mobile = models.ForeignKey(Mobile, on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.text
+
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
